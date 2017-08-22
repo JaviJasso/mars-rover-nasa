@@ -1,10 +1,15 @@
 import React, { Component } from "react"
-import logo from "../../logo.svg"
+import GetImageForm from "../GetImageForm"
+
 import "./index.css"
 
 class App extends Component {
   render() {
-    return <div>Cupi</div>
+    return (
+      <div>
+        <GetImageForm />
+      </div>
+    )
   }
 }
 
