@@ -12,7 +12,7 @@ class GetImageForm extends Component {
   }
 
   getImages = (event) => {
-    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${NASA_KEY}`
+    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=${NASA_KEY}`
     fetch(url)
     .then(res => res.json())
     .then(roverImages => this.setState({roverImages}))
@@ -21,7 +21,7 @@ class GetImageForm extends Component {
   render() {
     return (
       <div>
-        <ImageDisplay  />
+        <ImageDisplay images={this.state.roverImages} />
         <GetImageButton getImages={this.getImages}/>
       </div>
     )
